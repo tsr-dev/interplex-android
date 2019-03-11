@@ -1,0 +1,21 @@
+
+/* Define default spinner */
+.ui-icon-loading {
+	background: url("../libs/jquerymobile/1.4.5/images/ajax-loader.gif") repeat scroll 0 0 / 46px 46px transparent!important;
+}
+/* mobilecontainer */
+.ui-content.startScreen_mobilecontainer {
+	padding: 15px 15px 15px 15px;
+}
+/* mobilefooter */
+.startScreen_mobilefooter {
+	min-height:38px;
+}
+
+.center{color:white;}
+
+.center .ui-input-text{height: 25px !important;
+    margin-bottom: 11px !important;}
+.official_use h2{    border-bottom: 1px solid white;
+    padding-bottom: 5px;}    
+    

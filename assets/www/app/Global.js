@@ -1,0 +1,7 @@
+$(document).off(function(){
+    
+  
+    
+    
+});
+

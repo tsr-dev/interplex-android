@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            Lead Form
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-tap-highlight" content="no">
+        <!-- Enable all requests, inline styles, and eval() -->
+        <meta http-equiv="Content-Security-Policy" content="default-src https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com * gap://ready data:; style-src https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com 'self' 'unsafe-inline' *; script-src https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com 'self' 'unsafe-inline' 'unsafe-eval' *">
+        <link href="../css/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="../css/theme/flat-ui/flat-ui.css" rel="stylesheet" />
+        <link href="../libs/jquerymobile/1.4.5/jquery.mobile.structure-1.4.5.css" rel="stylesheet"
+        />
+        <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/EE091530-F008-E548-B26A-0706D41A2C8B/main.js" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/EE091530-F008-E548-B26A-0706D41A2C8B/main.js" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/EE091530-F008-E548-B26A-0706D41A2C8B/main.js" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/EE091530-F008-E548-B26A-0706D41A2C8B/main.js" charset="UTF-8"></script><script type="text/javascript" src="../libs/underscore/underscore.js">
+        </script>
+        <script type="text/javascript" src="../libs/store/json2.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-ajaxTransport.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.toLowerCase().indexOf("android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+                else if (navigator.userAgent.toLowerCase().indexOf("msie") != -1)
+                {
+                    $.mobile.allowCrossDomainPages = true;
+                    $.support.cors = true;
+                }
+                else if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g))
+                {
+                    $.mobile.hashListeningEnabled = false;
+                }
+            });
+        </script>
+        <script type="text/javascript" src="../libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.js">
+        </script>
+        <script type="text/javascript" src="../libs/apperyio/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="../libs/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/client-sdk.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/appery.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/component-manager.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/mapping-impl.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/entity-api.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/login.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/storage-api.js">
+        </script>
+        <script type="text/javascript" src="../get_target_platform.js">
+        </script>
+        <script type="text/javascript" src="../cordova.js">
+        </script>
+        <link href="../libs/apperyio/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../js/services/model.js">
+        </script>
+        <script type="text/javascript" src="../js/services/service.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="startScreen" id="leadform"
+        class="type-interior" data-theme="f">
+            <!-- mobileheader -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="f" name="mobileheader" id="startScreen_mobileheader" class="startScreen_mobileheader">
+                 <link href="../css/CSS1.css" rel="stylesheet" type="text/css" />
+            <a href="startScreen.html"><img src="../img/logo.png" width="30%" class="logo"></a>
+            
+              <div class="cart">
+                <div class="counter">0</div>
+           <a href="cart.html"><img src="../img/cart.png" width="30" class="cart_logo"> </a>      
+                
+            </div>
+             
+              
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="startScreen_mobilecontainer" name="mobilecontainer"
+            class="startScreen_mobilecontainer ui-content" dsid="mobilecontainer" data-theme="f">
+                <link href="LeadForm.css" rel="stylesheet" type="text/css" />
+            
+            
+            <div class="center"> 
+            
+              <div class="search">
+                    <form action="search.html" method="get">
+                 <input type="text" name="search" placeholder="Search for a product here">   
+                    
+                <div class="icon">
+                 <input type="submit" value="">
+                 </form>
+                 
+                </div>   
+               
+                </div>
+                
+                
+              <div class="breadcrumb"><a href="startScreen.html">HOME</a> / <a href="lead_form.html">LEAD FORM</a></div>
+             <form action="sucess.html" method="get" id="kosik">
+                <div class="test"></div> 
+                <div class="ocr">
+                    
+                  <label for="ocr_function">
+         <img src="../img/tap_to_screen.jpg" style="    width: 100%;" />
+            </label>    
+              <input type="file" id="ocr_function" name="ocr" accept="image/*" capture="capture" />
+              
+               </div>   
+             <table style="    width: 95%;margin-left:16px;">
+                 <tr><td  style="padding-right: 32px;">*Company</td><td><input type="text" name="company" id="company_r"></tr>
+                 <tr><td>*Name</td><td><input type="text" name="name" id="name_r"></tr>
+                 <tr><td>Position</td><td><input type="text" name="position"></tr>
+                 <tr><td>Address</td><td><input type="text" name="adress"></tr>
+                 <tr><td>*Phone</td><td><input type="text" name="phone" id="phone_r"></tr>
+                 <tr><td>*Email</td><td><input type="text" name="email" id="email_r"></tr>
+             </table> 
+             
+
+             <div class="products_cart" style="width: 98%;    margin-left: 16px;">
+                 
+            
+
+            
+            
+            
+             
+             
+             
+             
+             
+             
+             
+             
+             <textarea placeholder="Requirements (example: Customization)" rows="4" cols="50" name="interestedproducts" id="interested" style="width: 97%;height: 74px !important; "></textarea>
+            
+            <table style="width: 98%;  " id="requesty">
+            <tr><td style="    padding-top: 15px;
+    font-size: 20px;">Request</td><td><input type="checkbox" id="catalogue1"
+                   name="request_catalogue" value="Catalogue" /></td>
+            <td><label for="catalogue1">Catalogue</label></td>
+            
+            <td><input type="checkbox" id="quoatition1"
+                   name="request_quotition" value="Quotation" /></td>
+            <td><label for="quoatition1">Quotation</label></td>
+            
+            </tr>  
+             <tr><td></td><td><input type="checkbox" id="visit1"
+                   name="request_visit" value="Visit" /></td>
+            <td><label for="visit1">Visit</label></td>
+            
+            <td><input type="checkbox" id="samples1"
+                   name="request_Samples" value="Samples" /></td>
+            <td><label for="samples1">Samples</label></td>
+            
+            </tr>  
+                
+            </table>
+            
+            <div class="terms" style="text-align:justify;"><input type="checkbox" name="terms" id="checkbox_terms" oninvalid="this.setCustomValidity(this.willValidate?'':'Please tick this box in agreement to proceed')">I agree to the <span class="terms_agree">Terms of Use</span> and <span class="privacy_terms">Privacy Policy.</a></span>*
+            <p style="    margin-left: 6px;"> By providing the information herein, I consent to allow Interplex and its associated person/organizations to collect, use, disclose, store, retain and/or process all personal data and information for the purpose of sending me promotional and marketing related material</p>
+            
+            <ul>
+                <li>by electronic transmission to my email address(es); and/or</li>
+                 <li>to all my telephone number(s) (of which I confirm I am the user(s) and/or subscriber(s) of), by way of phone messaging/voice call.</li>
+                
+            </ul>
+            </div>
+            
+             <div id="terms2" data-role="popup" data-position-to="window" data-transition="turn">
+             <h3>1. YOUR AGREEMENT AND ACCEPTANCE</h3>
+<p>1.1	By entering, using and/or visiting this and our other websites (collectively, including all content available on or through our websites, to be referred to as the “Website”), you agree to these terms and conditions (as may be amended or revised from time to time) (the “Terms of Use”), and to the Privacy Policy, Copyright Notice and any other terms and conditions incorporated hereunder (this “Agreement”).</p>
+
+<p>1.2	You are only authorized to use the Website if you agree to abide by this Agreement. Please read these Terms of Use carefully as your entry, access and use of the Website is governed by these Terms of Use and by entering, accessing and using the Website, you agree to and accept the terms and conditions contained herein. If you do not agree with or to these Terms of Use, you must immediately leave the Website and discontinue using it and any of the services provided therein.</p>
+
+<p>1.3	You agree that the laws of the Republic of Singapore will govern this Agreement, and further agree to submit to the non-exclusive jurisdiction of the courts of the Republic of Singapore for any dispute in relation to or involving the Website.</p>
+
+<p>1.4	In order to participate in certain activities or services offered on the Website, you may be notified that you are required to download software or content and/or agree to additional terms and conditions and rules applicable to such services in which you choose to participate.</p>
+
+<p>1.5	These Terms of Use and any other terms and conditions of this Agreement may be amended or revised from time to time at any time without notice, and such amendment or revision shall be effective and binding upon posting onto the Website. It is therefore important that you review the Terms of Use regularly to ensure you are updated as to any changes. Your continued use of the Website signifies your agreement to and acceptance of any revised terms and conditions.</p>
+
+ <h3>2. WEBSITE ACCESS, REGISTRATION AND USAGE</h3>
+<p>2.1	In order to participate in certain activities or services offered on the Website or to become a member, you have to register with us to create an account. Each registration is for a single user only, and on registration, you will provide your email address and password (collectively, your “ID”). Sharing of registered accounts and/or ID on the Website, accessing the Website through a single ID made available to multiple users on a network, and unauthorized use of another’s ID is prohibited. In the event of inappropriate or unauthorized ID use or any other breach of this Agreement, we may terminate, restrict or suspend (for such period and on such terms, if any, as we deem fit or necessary) your account with, and/or access to, the Website without any liability whatsoever.</p>
+
+<p>2.2	When registering to create your account, you represent and warrant that all registration information you submit is accurate, truthful, complete and lawful. You further warrant that you will maintain the accuracy of such information and update the information as and when necessary.</p>
+<p>2.3	You are solely responsible for all activity that occurs on your account, for all use of the Website by you or anyone else using your ID, for preventing any unauthorized use of your ID and for maintaining the confidentiality of your ID and keeping it secure. You agree not to use the registered account and/or ID of another member at any time or to disclose your password to any third party. Please notify us immediately if you believe there has been any breach of security such as the disclosure, theft or unauthorized use of your ID.</p>
+
+<h3>3. GENERAL WARRANTY AND DISCLAIMER</h3>
+<p>3.1	All information on the website or other linked sites is provided on an “as is” basis. Interplex gives no warranty, express or implied, with respect to any information provided on this server or any other Interplex server, including but not limited to the implied warranties of merchantability, fitness for a particular purpose or non-infringement.</p>
+
+<p>3.2	In no event shall Interplex (and/or our related entities), our officers, directors, employees, or agents, be liable to you for any damages howsoever resulting from any loss or damage of any kind arising from or otherwise in connection with the access, use of or inability to access the website or interruptions or stoppage of service, including without limitation loss of goodwill, work stoppage, computer failure or malfunction, or any and all other damages or losses. Interplex shall not be liable for any direct, special, indirect, consequential, punitive or other damages based on use of information on or accessed from this website.</p>
+
+<p>3.3	Interplex does not warrant, endorse, guarantee, or assume responsibility for any product or service advertised or offered by a third party through the website or any hyperlinked website or featured in any banner or other advertising, and we are and will not be a party to or in any way be responsible for monitoring any transaction between you and third-party providers of products or services. As with the acquisition of information and purchase of a product or service through any medium or in any environment, you should use your best judgement, exercise caution where appropriate, and if need be, seek independent legal advice.</p>
+
+<h3>4. INDEMNITY</h3>
+<p>4.1	You agree to defend, indemnify and hold harmless us, our affiliates and related entities, and the officers, directors, employees and agents of each such foregoing entity, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to legal costs and expenses) arising from: (a) your use of and access to our Website; (b) your violation of any term of this Agreement; (c) your violation of any third party right, including without limitation any intellectual property, property, or privacy right; or</p>
+
+<h3>5. ASSIGNMENT</h3>
+<p>5.1	These Terms of Use, and any rights granted under this Agreement, may not be transferred or assigned by you, but may be assigned by us without any restriction whatsoever.</p>
+
+<h3>6. GENERAL</h3>
+<p>6.1	We reserve the right to modify or discontinue, temporarily or permanently, the Website (or any part thereof) at any time without prior notice and at our sole discretion. We shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Website, or any loss of content arising or resulting from such modification, suspension or discontinuance of the Website.</p>
+
+<p>6.2	The Website may contain links to other websites or resources. We are not responsible for the availability of such external websites or resources, do not endorse and are not responsible or liable for any content, advertising, products, or other materials on or available from such websites or resources. We shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such external website or resource.</p>
+
+<p>6.3	These Terms of Use, together with our Privacy Policy, Copyright Notice and any other terms and conditions incorporated hereunder, shall constitute the entire agreement between you and us concerning our Website.</p>
+
+<p>6.4	The headings and section titles in these Terms of Use are for convenience only and have no legal or contractual effect. 6.5 These Terms of Use operate to the fullest extent permissible by law. If any provision of these Terms of Use is unlawful, void or unenforceable, that provision is deemed severable from the Terms of Use and does not affect the validity and enforceability of any remaining provisions, which shall remain in full force and effect.</p>
+
+<p>6.5	No waiver of any term of this Agreement shall be deemed a further or continuing waiver of such term or any other term, and our failure to assert any right or provision hereunder shall not constitute a waiver of such right or provision.</p>
+            </div>
+            
+            
+            
+            
+            
+            
+            <div id="terms1" data-role="popup" data-position-to="window" data-transition="turn">
+         <h3> FOREWORD</h3> 
+Interplex’s business model is typically business to business. Any information provided by you, while it may contain what could be personal information, shall deemed and treated as business information which you provide to us to use for business and related purposes. We never request, and ask that you do not send, information which could be personally identifiable, such as passport number, date of birth, home address, and home telephone.
+
+<h3>SECURITY</h3> 
+We cannot ensure or warrant the security of any information you transmit to the Website and you do so entirely at your own risk. Upon receipt, we use industry standard efforts to safeguard information provided to us. We cannot guarantee that such information may not be accessed, disclosed, altered, or destroyed by breach of any of our physical, technical, or managerial safeguards.
+
+<h3>COOKIES</h3> 
+When you access the Website, we may send one or more cookies (which is a small text file) to your computer that uniquely identifies your browser. We use these cookies to help learn more about your preferences and therefore make the most of your experience on our site. Our cookies may be used for holding login information and will expire when all instances of the browser are closed. You may choose to reject cookies either outright, or on a case-by-case basis by using the Preferences (Netscape) or Internet Options (MSIE) option in your browser. Some features of the Website may not function properly if the ability to accept cookies is disabled.
+
+<h3>LOG FILE AND CLEAR GIFS INFORMATION</h3> 
+Consistent with standard Internet practices, our servers automatically tracks and records certain information in connection with your various activities regarding the Website or otherwise that are sent by your browser when you access the Website. These server logs may include without limitation information such as your web request, Internet Protocol (“IP”) address, browser type, browser language, referring / exit pages and URLs, platform type, number of clicks, domain names, landing pages, pages viewed and the order of those pages, the amount of time spent on particular pages and the date and time of your request.
+
+<h3>USES</h3> 
+You agree to us using the information you submit in connection with the operation, and maintenance of the Website and our marketing purposes as it helps us identify the Interplex products that are most relevant to your needs.
+
+Whenever we send you any information, you have a choice whether or not you wish to continue receiving such information. If you do not wish to receive further information of a similar nature, please inform us via communications@interplex.com. You however thereby agree to us using your e-mail address for non-marketing or administrative purposes (such as for customer service purposes or notifying you of material information such as changes to the Website).
+
+We use both information you provide and certain other information (such as anonymous User usage data, cookies, IP addresses, browser type, clickstream data) to improve the quality and design of the Website and to create new features, promotions, functionality, and services by storing, tracking, and analyzing user preferences and trends.
+
+We use cookies, clear GIFs, and log file information to:
+
+remember information so that you will not have to re-enter it during your visit or the next time you visit the Website;
+provide custom, personalized content and information;
+monitor the effectiveness of our marketing campaigns;
+monitor aggregate metrics (such as total number of visitors, pages viewed and, Website traffic); and
+track your entries and submissions.
+<h3>FEEDBACK</h3> 
+<p>Interplex encourages users to send their feedback to communications@interplex.com All information received through the feedback process shall be deemed business information and not personal data or personal information, and becomes the property of Interplex which may be used for promotional purposes. You are prohibited from posting or transmitting to or from the site any unlawful, infringing, threatening, libelous, defamatory, obscene or pornographic material or any other material that would violate any law.</p>
+
+<h3>DISCLOSURE</h3> 
+<p>We may provide information provided by you and certain other information to our related or affiliated companies, or other businesses or persons for the purpose of processing such information on our behalf. We require that these parties agree to process such information in compliance with our privacy policy contained herein and any applicable data protection laws, and we use reasonable efforts to limit their use of such information and to use other appropriate confidentiality and security measures.</p>
+
+<p>We are not in the business of selling information to other third-party companies for their commercial or marketing use.</p>
+
+<p>We may share information you provide to us with interested third-parties to assist them in understanding the usage patterns for certain content, services, advertisements, promotions, and/or functionality regarding the Website.</p>
+
+<p>We may release information you provide to us and/or other information related to you (i) if required to do so by law, (ii) or in the good faith belief that such action is necessary to comply with all and any applicable laws, (iii) where it is pursuant to or we are required to respond to a governmental, regulatory, administrative or court order or directive, a subpoena or a search warrant, (iv) that we believe, in good faith, is appropriate or necessary to enforce our rights , take precautions against liability, to investigate and defend against any third-party claims or allegations, (v) to assist government authorities and enforcement agencies, to protect the security or integrity of the Website, and/or (vi) to protect the rights, property, or safety of ourselves, our users or others.</p>
+
+<h3>THIRD-PARTY ADVERTISERS, LINKS</h3> 
+<p>We may allow third-party ad servers or ad networks to publish advertisements within our Website. These third-party ad servers or ad networks may use technology to send, directly to your browser, the advertisements and links that appear on the Website. They may thereby collect information including but without limitation via cookies or clear GIFS to measure the effectiveness of their advertisements and to personalize the advertising content you see.</p>
+
+<p>You should therefore always consult the respective privacy policies of these third-party ad servers or ad networks for more information on their practices and for instructions on how to opt-out of certain practices. Our privacy policy as contained herein does not apply to, and we cannot control nor be responsible for, the activities, security or content of, such other advertisers or web sites.</p>
+
+<h3>GOVERNING LAW</h3> 
+<p>The Website may be simultaneously hosted in various part of the world but the use of the Website is governed by the laws of the Republic of Singapore and you submit to the non-exclusive jurisdiction of the Singapore courts.</p>
+
+<h3>MERGER, ACQUISITION, SALE, INSOLVENCY</h3> 
+<p>In the event that we are acquired by or merged with another entity, we reserve the right, in any of these circumstances, to transfer or assign the information we have collected from our users as part of such merger, acquisition, sale, or other change of control.</p>
+
+<p>In the event of our insolvency, reorganisation, receivership, winding-up or assignment for the benefit of creditors, or the application of laws or equitable principles affecting creditors’ rights generally, we may not be able to control how information you have provided is treated, transferred, or used.</p>
+
+<h3>CHANGES</h3> 
+<p>These Webpages or Privacy Policy may be revised, amended or modified periodically. Please re-visit the relevant pages to stay in touch with any changes. Your continued use of the Website signifies your acceptance and agreement to this Privacy Policy (as may be amended or revised from time to time).</p>
+
+<h3>PERSONAL DATA LAWS COMPLIANCE BUSINESS CONTACT DETAILS</h3> 
+<p>The business contact details of the officer in charge are: via phone +65 62640033 via email communications@interplex.com</p>
+            </div>
+            
+            </div>
+            
+            
+            <div class="official_use" style="width: 98%;    margin-bottom: 26px;">
+            <h2 style="    font-size: 18px;">FOR OFFICIAL USE</h2>    
+            <table style="    margin-top: 30px;
+    margin-bottom: 15px;">
+                <tr><td>Enquiry taken by:</td><td><select name="stuff" id="stuff_list" form="kosik">
+                <option value="" selected>Select</option>    
+             </select>
+            </td></tr>
+            </table>
+            <textarea placeholder="Comments" rows="4" cols="50" name="comments"  id="interested" style="width: 98%;height: 74px !important;margin-bottom:15px; "></textarea>   
+                
+            </div>
+            
+            
+            
+             <table>
+                <tr><td>Qualification: </td><td><div class="colors_blue"><div></td><td><div class="colors_orange"><div></td><td><div class="colors_red"><div></td></tr>
+                
+               
+            </table>
+            
+              <div class="enquiryform" style=" margin-top:10px;">
+                  <input type="hidden" value="" name="colors" id="color_check"> 
+              <input type="hidden" value="lead" name="lead" id="lead">
+             <input type="submit" value="Submit"> 
+             <br />
+             <div class="clear_basket">Clear form <br /></div>
+             </div> 
+             
+             </div>   
+             
+             </form>
+                
+                <script type="text/javascript" src="lead.js">
+                </script>
+            </div>
+            </div>
+            <!-- mobilefooter -->
+            <div data-role="footer" data-position="fixed" class="startScreen_mobilefooter" name="mobilefooter"
+            dsid="mobilefooter" id="startScreen_mobilefooter" data-theme="f">
+            <div class="text">
+                <div class="text_logo">
+                ©2018 Interplex    
+                </div>
+                <div class="right_icon">
+                <a href="https://interplex.com/"><img src="../img/www_icon.png" width="32px"></a>
+                 <a href="https://www.linkedin.com/company/interplex"><img src="../img/linkdn_icon.png" width="32px"></a>
+                    
+                </div>
+                
+                <div class="lead_form">
+                 <a href="lead_form.html"><img src="../img/lead.png" width="100%"> </a>   
+                    
+                    
+                </div>
+                
+                
+            </div>    
+            </div>
+        </div>
+    </body>
+
+</html>
