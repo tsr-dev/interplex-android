@@ -123,7 +123,7 @@ function select(category_name, main_category){
     var collumn=-1;
      try {
     $.ajax({
-        url: 'https://noel777.com/Auto/select.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/select.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -276,7 +276,7 @@ function ajax(category_name, state, subcat, main_category){
     
     try {
     $.ajax({
-        url: 'https://noel777.com/Auto/feetch_products.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/feetch_products.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
