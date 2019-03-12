@@ -188,15 +188,16 @@ function select(category_name, main_category){
                             var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
                       $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=datacom.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
                       }
+
                       if(item.Segment=="Press-Fit"){
                         var kategorie =  replaceAll(item.Category," ","_");
 
-                        //    if(kategorie=="Servers")
-                        // {
-                        //     kategorie="Server";
-                        // }
+                           if(kategorie=="Servers")
+                        {
+                            kategorie="Server";
+                        }
                          var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-                   $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Press-Fit.html>"+item.Segment+"</a> / <a href=P_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+                   $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Press-Fit.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
                    }
 
                         collumn++;
@@ -222,9 +223,8 @@ function select(category_name, main_category){
                                 columnSide = 'right';
                                 break;
                         }
-                        var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-                        var kategorie =  replaceAll(item.Category," ","_");
-                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+kategorie+"&subcategory="+subkategorie+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+
+                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+item.Category+"&subcategory="+item.Subcategory+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -276,26 +276,26 @@ function select(category_name, main_category){
     
 }
 
-function ajax(subcategory_name, main_category, name){
+function ajax(category_name, state, subcat, main_category){
   
     main_category = unescape(main_category);
-
-    name = unescape(name);
-
-    subcategory_name = unescape(subcategory_name);
+  
+     subcat =  unescape(subcat);
+    category_name = unescape(category_name);
    // var c=1;
     var collumn=-1;
     
     try {
     $.ajax({
-        url: 'http://10.70.1.148:8080/Serverfiles/feetch_products_page.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/feetch_products.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
         data:{
-        name: name,
+        subcat: subcat,
         main_category:  main_category,
-        category: subcategory_name
+        category: category_name,
+        state: state
         },
         success: function(data, status){
             
@@ -306,52 +306,59 @@ function ajax(subcategory_name, main_category, name){
               
             $.each(data, function(i,item){ 
                 
-              if(item.Segment=="Automotive"){
-                   var kategorie =  replaceAll(item.Category," ","_");
-                   
-                      if(kategorie=="Passenger_Comfort_And_Access")
-                   {
-                       kategorie="Passenger_Comfort";
-                   }
-                   
-                       if(kategorie=="Servers")
-                   {
-                       kategorie="Server";
-                   }
-                   
+                if(item.Segment=="Press-Fit"){
+                    var kategorie =  replaceAll(item.Category," ","_");
+                    if(kategorie == ""){
+                        kategorie = ""
+                    }
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-              $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
-              }
-              
-               if(item.Segment=="Medical & Life Sciences"){
-                   
-                   var kategorie =  replaceAll(item.Category," ","_");
-                   
-                     
-                      if(kategorie=="Drug_Delivery_and_Diagnostics")
-                   {
-                       kategorie="Drug";
-                   }
-                   
-                     if(kategorie=="Surgical_and_Treatment")
-                   {
-                       kategorie="Surgical";
-                   }
-                   
+              $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Press-Fit.html>"+item.Segment+"</a> / <a href=P_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system(update).html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+                }
+                
+                if(item.Segment=="IPD Demos"){
+                    var kategorie =  replaceAll(item.Category," ","_");
+                    if(kategorie == ""){
+                        kategorie = ""
+                    }
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-              $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=medical.html>"+item.Segment+"</a> / <a href=M_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
-              }
-              
-               if(item.Segment=="Datacom & Telecom"){
-                   var kategorie =  replaceAll(item.Category," ","_");
+              $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=IPD_Demos.html>"+item.Segment+"</a> / <a href=I_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system(update).html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+                }
+
+
+              if(item.Segment=="Technologies"){
                    
-                      if(kategorie=="Servers")
-                   {
-                       kategorie="Server";
-                   }
-                    var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-              $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=datacom.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
-              }
+                var kategorie =  replaceAll(item.Category," ","_");
+                
+                  
+                   if(kategorie=="Fuel Cell Bipolar Plates")
+                {
+                    kategorie="Fuel Cell";
+                }
+                
+                  if(kategorie=="Busbars")
+                {
+                    kategorie="Busbars";
+                }
+                if(kategorie=="Precision Stamping")
+                {
+                    kategorie="Precision Stamping";
+                }
+                if(kategorie=="Tooling & Molding")
+                {
+                    kategorie="Tooling & Molding";
+                }
+                if(kategorie=="Cold Forging")
+                {
+                    kategorie="Cold Forging";
+                }
+                if(kategorie=="Cold Forged Progressive Stamping")
+                {
+                    kategorie="Cold Forged";
+                }
+                
+                 var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+           $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a> / <a href=T_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system(update).html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+           }
               
                 collumn++;
                
@@ -440,7 +447,7 @@ function Products_Entertainment_system_js() {
      */
     Apperyio.mappings = Apperyio.mappings || {};
     Apperyio.datasources = Apperyio.datasources || {};
-    Apperyio.CurrentScreen = 'products_level';
+    Apperyio.CurrentScreen = 'Products_Entertainment_system';
     _.chain(Apperyio.mappings)
         .filter(function(m) {
             return m.homeScreen === Apperyio.CurrentScreen;
@@ -458,16 +465,16 @@ function Products_Entertainment_system_js() {
     };
     // screen window events
     function Products_Entertainment_system_windowEvents() {
-        $('#products_level').bind('pageshow orientationchange', function() {
+        $('#Products_Entertainment_system').bind('pageshow orientationchange', function() {
             var _page = this;
             adjustContentHeightWithPadding(_page);
         });
         
-        $('#products_level').on({
+        $('#Products_Entertainment_system').on({
             pageshow: function(event) {
                 try {
-                  // select(getAllUrlParams().category, getAllUrlParams().main_category);
-                   ajax(getAllUrlParams().subcategory, getAllUrlParams().main_category, getAllUrlParams().name);
+                   select(getAllUrlParams().category, getAllUrlParams().main_category);
+                  // ajax(getAllUrlParams().category, 'category', '', getAllUrlParams().main_category);
                     
                    
                 } catch (e) {
@@ -492,8 +499,8 @@ function Products_Entertainment_system_js() {
             event.stopPropagation();
         });
     };
-    $(document).off("pagebeforeshow", "#products_level").on("pagebeforeshow", "#products_level", function(event, ui) {
-        Apperyio.CurrentScreen = "products_level";
+    $(document).off("pagebeforeshow", "#Products_Entertainment_system").on("pagebeforeshow", "#Products_Entertainment_system", function(event, ui) {
+        Apperyio.CurrentScreen = "Products_Entertainment_system";
         _.chain(Apperyio.mappings)
             .filter(function(m) {
                 return m.homeScreen === Apperyio.CurrentScreen;
@@ -502,7 +509,7 @@ function Products_Entertainment_system_js() {
     });
     Products_Entertainment_system_onLoad();
 };
-$(document).off("pagecreate", "#products_level").on("pagecreate", "#products_level", function(event, ui) {
+$(document).off("pagecreate", "#Products_Entertainment_system").on("pagecreate", "#Products_Entertainment_system", function(event, ui) {
     Apperyio.processSelectMenu($(this));
     
     
