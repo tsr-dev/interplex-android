@@ -170,8 +170,7 @@ function select(category_name, main_category){
 //                            kategorie="Server";
 //                        }
                          var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-                   $(".breadcrumb").html("<a href=startScreen.html>HOME</a>")
-);
+                        $(".breadcrumb").html("<a href=startScreen.html>HOME</a>")
                    }
                         collumn++;
 
@@ -197,8 +196,8 @@ function select(category_name, main_category){
                                 break;
                         }
 
-                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products.html?name="+item.Mark+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
-//                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                        // $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products.html?name="+item.Mark+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                 $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -256,6 +255,7 @@ function ajax(category_name, state, subcat, main_category){
   
      subcat =  unescape(subcat);
     category_name = unescape(category_name);
+    alert('11111111');
    // var c=1;
     var collumn=-1;
     
