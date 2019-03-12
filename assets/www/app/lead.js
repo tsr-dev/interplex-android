@@ -124,7 +124,7 @@ function ajax(){
     
     try {
     $.ajax({
-        url: 'https://noel777.com/Auto/feetch_more.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/feetch_more.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -136,7 +136,7 @@ function ajax(){
               $(".produkty").append('<div class="name_product" id='+item.Mark+'>'+item.Name+'</div><a class="delete" data-id="'+item.Mark+'">X</div>');
                $(".produkty").append('<input hidden name=zbozi type=text id="'+item.Mark+'" value="'+item.Mark+'">');
             
-              $(".produkty").append(" <div class='image_product' data-id='"+item.Mark+"'><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /> </div>" );
+              $(".produkty").append(" <div class='image_product' data-id='"+item.Mark+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /> </div>" );
               $(".produkty").append('<div class="subcategory_product" id='+item.Mark+'>'+item.Subcategory+'</div>');
               
               $(".produkty").append('<div class="category_product" id='+item.Mark+'>'+item.Category+'</div>');
@@ -160,7 +160,7 @@ catch (e) {
 
    try {
     $.ajax({
-        url: 'https://noel777.com/Auto/stuff.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/stuff.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -260,7 +260,7 @@ $(document).off("pagecreate", "#leadform").on("pagecreate", "#leadform", functio
     var form_data = new FormData();                  
     form_data.append('file', file_data);                            
     $.ajax({
-                url: 'https://noel777.com/Auto/uploader.php',
+                url: 'http://10.70.1.148:8080/Serverfiles/uploader.php',
                 dataType: 'text',
                 cache: false,
                 contentType: false,

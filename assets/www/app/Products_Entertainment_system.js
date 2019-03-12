@@ -213,7 +213,7 @@ function select(category_name, main_category){
                                 break;
                         }
 
-                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+item.Category+"&subcategory="+item.Subcategory+"'><img width='100%' src=https://noel777.com/Auto/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+item.Category+"&subcategory="+item.Subcategory+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -233,14 +233,14 @@ function select(category_name, main_category){
 
 
 
-                            $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                            $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
 
                         }
 
 
                          if (collumn==2){
-                            $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                            $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
 
                         } */
@@ -366,7 +366,7 @@ function ajax(category_name, state, subcat, main_category){
                         break;
                 } 
                 
-                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                 
                 if ((i + 1) % 3 == 0) {
                    collumn = -1;
@@ -386,14 +386,14 @@ function ajax(category_name, state, subcat, main_category){
                      
                      
                       
-                    $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                     
                 } 
                 
                 
                  if (collumn==2){
-                    $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                    
                 } */

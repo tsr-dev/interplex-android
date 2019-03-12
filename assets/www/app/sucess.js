@@ -113,7 +113,7 @@ function ajax(){
   
     try {
     $.ajax({
-        url: 'https://noel777.com/Auto/order.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/order.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',

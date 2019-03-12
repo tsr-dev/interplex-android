@@ -113,7 +113,7 @@ function ajax(){
   
     try {
     $.ajax({
-        url: 'https://noel777.com/Auto/search.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/search.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -143,7 +143,7 @@ function ajax(){
                     
                     
                     
-                    $(".tabs_sub_left").append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_left").append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                   
                    
                 } 
@@ -153,14 +153,14 @@ function ajax(){
                      
                      
                       
-                    $(".tabs_sub_center").append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_center").append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                     
                 } 
                 
                 
                  if (collumn==2){
-                    $(".tabs_sub_right").append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_right").append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                    
                 } 

@@ -128,7 +128,7 @@ function ajax(){
     
     try {
     $.ajax({
-        url: 'https://noel777.com/Auto/feetch.php',
+        url: 'http://10.70.1.148:8080/Serverfiles/feetch.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -183,28 +183,28 @@ function ajax(){
           
               $(".enquiry_form").append("<a href=# class=enquiry data-id="+item.Mark+">ADD TO ENQUIRY</a>" ); 
             
-             $(".image").append("<img id='first_image1' width='100%' data-src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg src=https://noel777.com/Auto/thumbs/"+item.Mark+".jpg />" );  
+             $(".image").append("<img id='first_image1' width='100%' data-src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg />" );  
          
          
-         checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_1.jpg"), function(){ $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_1.jpg />" );}, function(){ }  );    
+         checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_1.jpg"), function(){ $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_1.jpg />" );}, function(){ }  );    
             
-        checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_2.jpg"), function(){ $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_2.jpg />" );}, function(){ }  );  
+        checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_2.jpg"), function(){ $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_2.jpg />" );}, function(){ }  );  
            
     
         
             
              
-             checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_3.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_3.jpg />");}, function(){ }  );
+             checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_3.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_3.jpg />");}, function(){ }  );
              
-              checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_4.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_4.jpg />");}, function(){ }  );
+              checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_4.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_4.jpg />");}, function(){ }  );
               
-               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_5.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_5.jpg />");}, function(){ }  );
+               checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_5.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_5.jpg />");}, function(){ }  );
                
-               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_6.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_6.jpg />");}, function(){ }  ); 
+               checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_6.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_6.jpg />");}, function(){ }  ); 
                
-               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_7.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_7.jpg />");}, function(){ }  ); 
+               checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_7.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_7.jpg />");}, function(){ }  ); 
                
-               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_8.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_8.jpg />");}, function(){ }  ); 
+               checkImage(("http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_8.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+"_8.jpg />");}, function(){ }  ); 
              
               $(".description").append(item.Description);
             });
