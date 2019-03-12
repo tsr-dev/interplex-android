@@ -353,6 +353,41 @@ function ajax(category_name, state, subcat, main_category){
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=datacom.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
               
+              if(item.Segment=="Technologies"){
+                   
+                var kategorie =  replaceAll(item.Category," ","_");
+                
+                  
+                   if(kategorie=="Fuel Cell Bipolar Plates")
+                {
+                    kategorie="Fuel Cell";
+                }
+                
+                  if(kategorie=="Busbars")
+                {
+                    kategorie="Busbars";
+                }
+                if(kategorie=="Precision Stamping")
+                {
+                    kategorie="Precision Stamping";
+                }
+                if(kategorie=="Tooling & Molding")
+                {
+                    kategorie="Tooling & Molding";
+                }
+                if(kategorie=="Cold Forging")
+                {
+                    kategorie="Cold Forging";
+                }
+                if(kategorie=="Cold Forged Progressive Stamping")
+                {
+                    kategorie="Cold Forged";
+                }
+                
+                 var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+        //    $(".breadcrumb").html("<a href=startScreen.html>HOME</a>");
+           }
+
                 collumn++;
                
                 /* if(c==total){

@@ -160,8 +160,8 @@ function ajax() {
                             kategorie = "";
                         }
 
-                        var subkategorie = replaceAll(item.Subcategory, "%20", " ");
-                        $(".breadcrumb").append("<a href=startScreen.html>HOME</a>");
+                        // var subkategorie = replaceAll(item.Subcategory, "%20", " ");
+                        // $(".breadcrumb").append("<a href=startScreen.html>HOME</a>");
                     }
 
 
