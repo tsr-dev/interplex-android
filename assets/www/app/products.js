@@ -4,7 +4,7 @@
 
 
 
-Apperyio.getProjectGUID = function () {
+Apperyio.getProjectGUID = function() {
     return 'ec7518f9-d042-4137-bf4f-6bad235470fc';
 };
 
@@ -50,189 +50,180 @@ Apperyio.AppPages = [{
 
 function getAllUrlParams(url) {
 
-    // get query string from url (optional) or window
-    var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+  // get query string from url (optional) or window
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
 
-    // we'll store the parameters here
-    var obj = {};
+  // we'll store the parameters here
+  var obj = {};
 
-    // if query string exists
-    if (queryString) {
+  // if query string exists
+  if (queryString) {
 
-        // stuff after # is not part of query string, so get rid of it
-        queryString = queryString.split('#')[0];
+    // stuff after # is not part of query string, so get rid of it
+    queryString = queryString.split('#')[0];
 
-        // split our query string into its component parts
-        var arr = queryString.split('&');
+    // split our query string into its component parts
+    var arr = queryString.split('&');
 
-        for (var i = 0; i < arr.length; i++) {
-            // separate the keys and the values
-            var a = arr[i].split('=');
+    for (var i=0; i<arr.length; i++) {
+      // separate the keys and the values
+      var a = arr[i].split('=');
 
-            // in case params look like: list[]=thing1&list[]=thing2
-            var paramNum = undefined;
-            var paramName = a[0].replace(/\[\d*\]/, function (v) {
-                paramNum = v.slice(1, -1);
-                return '';
-            });
+      // in case params look like: list[]=thing1&list[]=thing2
+      var paramNum = undefined;
+      var paramName = a[0].replace(/\[\d*\]/, function(v) {
+        paramNum = v.slice(1,-1);
+        return '';
+      });
 
-            // set parameter value (use 'true' if empty)
-            var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+      // set parameter value (use 'true' if empty)
+      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
 
-            // (optional) keep case consistent
+      // (optional) keep case consistent
+      
 
-
-            // if parameter name already exists
-            if (obj[paramName]) {
-                // convert value to array (if still string)
-                if (typeof obj[paramName] === 'string') {
-                    obj[paramName] = [obj[paramName]];
-                }
-                // if no array index number specified...
-                if (typeof paramNum === 'undefined') {
-                    // put the value on the end of the array
-                    obj[paramName].push(paramValue);
-                }
-                // if array index number specified...
-                else {
-                    // put the value at that index number
-                    obj[paramName][paramNum] = paramValue;
-                }
-            }
-            // if param name doesn't exist yet, set it
-            else {
-                obj[paramName] = paramValue;
-            }
+      // if parameter name already exists
+      if (obj[paramName]) {
+        // convert value to array (if still string)
+        if (typeof obj[paramName] === 'string') {
+          obj[paramName] = [obj[paramName]];
         }
+        // if no array index number specified...
+        if (typeof paramNum === 'undefined') {
+          // put the value on the end of the array
+          obj[paramName].push(paramValue);
+        }
+        // if array index number specified...
+        else {
+          // put the value at that index number
+          obj[paramName][paramNum] = paramValue;
+        }
+      }
+      // if param name doesn't exist yet, set it
+      else {
+        obj[paramName] = paramValue;
+      }
     }
+  }
 
-    return obj;
+  return obj;
 }
 
 
 function checkImage(imageSrc, good, bad) {
     var img = new Image();
-    img.onload = good;
+    img.onload = good; 
     img.onerror = bad;
     img.src = imageSrc;
 }
 
-function ajax() {
+function ajax(){
+    
+    
 
-
-
-
-
-    var product_name = getAllUrlParams().product;
-
-
+   
+   
+   var product_name = getAllUrlParams().product;
+  
+    
     try {
-        $.ajax({
-            url: 'http://10.70.1.148:8080/Serverfiles/feetch.php',
-            type: "GET",
-            dataType: 'jsonp',
-            jsonp: 'callback',
-            timeout: 5000,
-            data: {
-                product: product_name
-            },
-            success: function (data, status) {
-                $.each(data, function (i, item) {
+    $.ajax({
+        url: 'https://noel777.com/Auto/feetch.php',
+        type: "GET",
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        timeout: 5000,
+        data:{
+        product: product_name
+        },
+        success: function(data, status){
+            $.each(data, function(i,item){ 
+             
+              $(".name").append(item.Name);
+              
+              if(item.Segment=="Automotive"){
+                   var kategorie =  replaceAll(item.Category," ","_");
+                   
+                   if(kategorie=="Passenger_Comfort_&_Access")
+                   {
+                       kategorie="Passenger_Comfort";
+                   }
+                   
+                    var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+              $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+              }
+              
+               if(item.Segment=="Medical & Life Sciences"){
+                   
+                  
+                   
+                   var kategorie =  replaceAll(item.Category," ","_");
+                   
+                   if(kategorie=="Drug_Delivery_and_Diagnostics"){
+                     kategorie ="Drug";  
+                   } 
+                   
+                    if(kategorie=="Surgical_and_Treatment"){
+                     kategorie ="Surgical";  
+                   } 
+                   
+                  
+                   
+                    var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+              $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=medical.html>"+item.Segment+"</a> / <a href=M_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+              }
+              
+               if(item.Segment=="Datacom & Telecom"){
+                   var kategorie =  replaceAll(item.Category," ","_");
+                    var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+              $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=datacom.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+              }
+              
+             
+          
+              $(".enquiry_form").append("<a href=# class=enquiry data-id="+item.Mark+">ADD TO ENQUIRY</a>" ); 
+            
+             $(".image").append("<img id='first_image1' width='100%' data-src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+".jpg src=https://noel777.com/Auto/thumbs/"+item.Mark+".jpg />" );  
+         
+         
+         checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_1.jpg"), function(){ $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_1.jpg />" );}, function(){ }  );    
+            
+        checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_2.jpg"), function(){ $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_2.jpg />" );}, function(){ }  );  
+           
+    
+        
+            
+             
+             checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_3.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_3.jpg />");}, function(){ }  );
+             
+              checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_4.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_4.jpg />");}, function(){ }  );
+              
+               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_5.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_5.jpg />");}, function(){ }  );
+               
+               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_6.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_6.jpg />");}, function(){ }  ); 
+               
+               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_7.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_7.jpg />");}, function(){ }  ); 
+               
+               checkImage(("https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_8.jpg"), function(){ $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=https://noel777.com/Auto/"+item.Mark+"/"+item.Mark+"_8.jpg />");}, function(){ }  ); 
+             
+              $(".description").append(item.Description);
+            });
+        },
+        error: function(data){
+            console.log(data);
+           $(".name").append('There was an error loading the data.');
+        }
+    });
 
-                    $(".name").append(item.Name);
+}
+catch (e) {
 
-                    if (item.Segment == "Automotive") {
-                        var kategorie = replaceAll(item.Category, " ", "_");
-
-                        if (kategorie == "Passenger_Comfort_&_Access") {
-                            kategorie = "Passenger_Comfort";
-                        }
-
-                        var subkategorie = replaceAll(item.Subcategory, "%20", " ");
-                        $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=automotive.html>" + item.Segment + "</a> / <a href=A_" + kategorie + ".html>" + item.Category + "</a> / <a href='Products_Entertainment_system.html?category=" + item.Subcategory + "&main_category=" + item.Category + "'>" + item.Subcategory + "</a>");
-                    }
-
-
-                    if (item.Segment == "Press-Fit") {
-                        var kategorie = replaceAll(item.Category, " ", "_");
-
-                        if (kategorie == "") {
-                            kategorie = "";
-                        }
-
-                        // var subkategorie = replaceAll(item.Subcategory, "%20", " ");
-                        // $(".breadcrumb").append("<a href=startScreen.html>HOME</a>");
-                    }
-
-
-                    if (item.Segment == "Medical & Life Sciences") {
-                        var kategorie = replaceAll(item.Category, " ", "_");
-
-                        if (kategorie == "Drug_Delivery_and_Diagnostics") {
-                            kategorie = "Drug";
-                        }
-
-                        if (kategorie == "Surgical_and_Treatment") {
-                            kategorie = "Surgical";
-                        }
-
-
-
-                        var subkategorie = replaceAll(item.Subcategory, "%20", " ");
-                        $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=medical.html>" + item.Segment + "</a> / <a href=M_" + kategorie + ".html>" + item.Category + "</a> / <a href='Products_Entertainment_system.html?category=" + item.Subcategory + "&main_category=" + item.Category + "'>" + item.Subcategory + "</a>");
-                    }
-
-                    if (item.Segment == "Datacom & Telecom") {
-                        var kategorie = replaceAll(item.Category, " ", "_");
-                        var subkategorie = replaceAll(item.Subcategory, "%20", " ");
-                        $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=datacom.html>" + item.Segment + "</a> / <a href=D_" + kategorie + ".html>" + item.Category + "</a> / <a href='Products_Entertainment_system.html?category=" + item.Subcategory + "&main_category=" + item.Category + "'>" + item.Subcategory + "</a>");
-                    }
-
-
-
-                    $(".enquiry_form").append("<a href=# class=enquiry data-id=" + item.Mark + ">ADD TO ENQUIRY</a>");
-
-                    $(".image").append("<img id='first_image1' width='100%' data-src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + ".jpg src=http://10.70.1.148:8080/Serverfiles/thumbs/" + item.Mark + ".jpg />");
-
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_1.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_1.jpg />"); }, function () { });
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_2.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_2.jpg />"); }, function () { });
-
-
-
-
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_3.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_3.jpg />"); }, function () { });
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_4.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_4.jpg />"); }, function () { });
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_5.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_5.jpg />"); }, function () { });
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_6.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_6.jpg />"); }, function () { });
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_7.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_7.jpg />"); }, function () { });
-
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_8.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_8.jpg />"); }, function () { });
-
-                    $(".description").append(item.Description);
-                });
-            },
-            error: function (data) {
-                console.log(data);
-                $(".name").append('There was an error loading the data.');
-            }
-        });
-
-    }
-    catch (e) {
-
-        logMyErrors(e);
-    }
+   logMyErrors(e); 
+}
 
 
 
-
+    
 }
 
 
@@ -240,32 +231,32 @@ function ajax() {
 
 
 function products_js() {
-
-
-
+    
+    
+    
 
 
 
     // On Load
-    var products_onLoad = function () {
+    var products_onLoad = function() {
         products_elementsExtraJS();
         products_deviceEvents();
         products_windowEvents();
         products_elementsEvents();
     };
-
-    // screen window events
+   
+     // screen window events
 
     function products_windowEvents() {
-        $('#products').bind('pageshow orientationchange', function () {
+        $('#products').bind('pageshow orientationchange', function() {
             var _page = this;
             adjustContentHeightWithPadding(_page);
         });
-        $('#products').on({
-            pageshow: function (event) {
+          $('#products').on({
+            pageshow: function(event) {
                 try {
                     ajax();
-                    $(".counter").html(pocet);
+                    $(".counter").html(pocet);  
                 } catch (e) {
                     console.error(e);
                     hideSpinner();
@@ -275,7 +266,7 @@ function products_js() {
     };
     // device events
     function products_deviceEvents() {
-        document.addEventListener("deviceready", function () {
+        document.addEventListener("deviceready", function() {
         });
     };
     // screen elements extra js
@@ -284,67 +275,67 @@ function products_js() {
     };
     // screen elements handler
     function products_elementsEvents() {
-        $(document).on("click", "a :input,a a,a fieldset label", function (event) {
+        $(document).on("click", "a :input,a a,a fieldset label", function(event) {
             event.stopPropagation();
         });
     };
-    $(document).off("pagebeforeshow", "#products").on("pagebeforeshow", "#products", function (event, ui) {
+    $(document).off("pagebeforeshow", "#products").on("pagebeforeshow", "#products", function(event, ui) {
         Apperyio.CurrentScreen = "products";
         _.chain(Apperyio.mappings)
-            .filter(function (m) {
+            .filter(function(m) {
                 return m.homeScreen === Apperyio.CurrentScreen;
             })
             .each(Apperyio.UIHandler.hideTemplateComponents);
     });
     products_onLoad();
 };
-$(document).off("pagecreate", "#products").on("pagecreate", "#products", function (event, ui) {
+$(document).off("pagecreate", "#products").on("pagecreate", "#products", function(event, ui) {
     Apperyio.processSelectMenu($(this));
-    $(document).off("click", ".enquiry");
+$(document).off("click", ".enquiry");   
 
-    $(document).on("click", "#first_image", function () {
-
-        var src = $(this).attr('src');
-        $("#img01").attr("src", src);
-
-        $("#myModal").css("display", "block");
-        $("#exit").css("display", "block");
-
-
+$(document).on("click", "#first_image", function(){
+     
+     var src = $(this).attr('src');
+     $("#img01").attr("src",src);
+     
+    $("#myModal").css("display", "block"); 
+    $("#exit").css("display", "block"); 
+     
+     
     });
-
-    $(document).on("click", "#first_image1", function () {
-
-        var src = $(this).attr('data-src');
-        $("#img01").attr("src", src);
-
-        $("#myModal").css("display", "block");
-        $("#exit").css("display", "block");
-
-
-    });
-
-
-    $(document).on("click", "#exit", function () {
-
-
-        $("#myModal").css("display", "none");
-        $("#exit").css("display", "none");
-
-    });
-
-
+    
+$(document).on("click", "#first_image1", function(){
+     
+     var src = $(this).attr('data-src');
+     $("#img01").attr("src",src);
+     
+    $("#myModal").css("display", "block"); 
+    $("#exit").css("display", "block"); 
+     
+     
+    });    
+    
+   
+$(document).on("click", "#exit", function(){
+     
+     
+    $("#myModal").css("display", "none"); 
+    $("#exit").css("display", "none");  
+     
+    });   
+    
+   
     products_js();
-
-    $(document).on("click", ".enquiry", function () {
-
-        produkt[pocet] = $(this).attr('data-id');
-
-        $(".success").slideDown();
-        pocet = pocet + 1;
-        $(".counter").html(pocet);
-
+   
+   $(document).on("click", ".enquiry", function(){
+       
+      produkt[pocet]= $(this).attr('data-id'); 
+     
+     $(".success").slideDown(); 
+     pocet = pocet+1;   
+     $(".counter").html(pocet); 
+      
     });
-
-
+    
+    
 });
