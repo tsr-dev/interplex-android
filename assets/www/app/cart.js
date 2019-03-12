@@ -130,7 +130,8 @@ function ajax(){
         jsonp: 'callback',
         data:product,
         success: function(data, status){
-            $.each(data, function(i,item){ 
+            console.log(JSON.stringify(data));
+            $.each(data, function(i,item){
               
                
               $(".produkty").append('<div class="name_product" id='+item.Mark+'>'+item.Name+'</div><a class="delete" data-id="'+item.Mark+'">X</div>');
@@ -145,7 +146,7 @@ function ajax(){
             });
         },
         error: function(data){
-            console.log(data);
+            console.log(JSON.stringify(data),'111111');
            $(".name").append('There was an error loading the data.');
         }
     });

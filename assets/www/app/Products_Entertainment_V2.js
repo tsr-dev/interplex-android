@@ -120,7 +120,6 @@ function onlyUnique(value, index, self) {
 function select(category_name, main_category){
     main_category = unescape(main_category);
     subcategory_name = unescape(category_name);
-    alert('11111111');
     var collumn=-1;
      try {
     $.ajax({
@@ -172,6 +171,12 @@ function select(category_name, main_category){
                          var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
                         $(".breadcrumb").html("<a href=startScreen.html>HOME</a>")
                    }
+                   if(item.Segment=="IPD Demos"){
+                           var kategorie =  replaceAll(item.Category," ","_");
+
+                          var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+                        $(".breadcrumb").html("<a href=startScreen.html>HOME</a>")
+                   }
                         collumn++;
 
                         /* if(c==total){
@@ -197,7 +202,7 @@ function select(category_name, main_category){
                         }
 
                         // $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products.html?name="+item.Mark+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
-                 $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                 $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=productsV2.html?product="+item.Mark+"&main_category="+item.Category+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><a href=productsV2.html?product="+item.Mark+"&main_category="+item.Category+"><div class='name_cat'>"+item.Name+"</div></div></a>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -326,7 +331,7 @@ function ajax(category_name, state, subcat, main_category){
                         break;
                 } 
                 
-                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=productsV2.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                 
                 if ((i + 1) % 3 == 0) {
                    collumn = -1;
