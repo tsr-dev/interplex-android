@@ -152,6 +152,18 @@ function ajax(){
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
+
+              if(item.Segment=="Press-Fit"){
+                var kategorie =  replaceAll(item.Category," ","_");
+                
+                if(kategorie=="Passenger_Comfort_&_Access")
+                {
+                    kategorie="Passenger_Comfort";
+                }
+                
+                 var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+           $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=Press-Fit.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+           }
               
                if(item.Segment=="Medical & Life Sciences"){
                    

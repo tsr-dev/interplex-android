@@ -188,6 +188,16 @@ function select(category_name, main_category){
                             var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
                       $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=datacom.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
                       }
+                      if(item.Segment=="Press-Fit"){
+                        var kategorie =  replaceAll(item.Category," ","_");
+
+                           if(kategorie=="Servers")
+                        {
+                            kategorie="Server";
+                        }
+                         var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+                   $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Press-Fit.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+                   }
 
                         collumn++;
 
