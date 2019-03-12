@@ -312,6 +312,8 @@ function ajax(category_name, state, subcat, main_category){
                         kategorie = "";
                     }
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+              $(".breadcrumb").html("<a href=startScreen.html>HOME</a>" );
+
                 }
                 
                 if(item.Segment=="IPD Demos"){

@@ -161,7 +161,7 @@ function ajax() {
                         }
 
                         var subkategorie = replaceAll(item.Subcategory, "%20", " ");
-                        $(".breadcrumb").append("<a href=startScreen.html>HOME</a>" + item.Segment + "<a href=P_" + kategorie + ".html>" + item.Category + "</a> / <a href='Products_Entertainment_system(update).html?category=" + item.Subcategory + "&main_category=" + item.Category + "'>" + item.Subcategory + "</a>");
+                        $(".breadcrumb").append("<a href=startScreen.html>HOME</a>");
                     }
 
 
