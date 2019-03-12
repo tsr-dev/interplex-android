@@ -309,16 +309,15 @@ function ajax(category_name, state, subcat, main_category){
                 if(item.Segment=="Press-Fit"){
                     var kategorie =  replaceAll(item.Category," ","_");
                     if(kategorie == ""){
-                        kategorie = ""
+                        kategorie = "";
                     }
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-              $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Press-Fit.html>"+item.Segment+"</a> / <a href=P_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system(update).html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
                 }
                 
                 if(item.Segment=="IPD Demos"){
                     var kategorie =  replaceAll(item.Category," ","_");
                     if(kategorie == ""){
-                        kategorie = ""
+                        kategorie = "";
                     }
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=IPD_Demos.html>"+item.Segment+"</a> / <a href=I_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system(update).html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
