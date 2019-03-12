@@ -78,7 +78,7 @@ function getAllUrlParams(url) {
       var paramValue = typeof(a[1])==='undefined' ? true : a[1];
 
       // (optional) keep case consistent
-      
+
 
       // if parameter name already exists
       if (obj[paramName]) {
@@ -111,7 +111,7 @@ function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
 
-function onlyUnique(value, index, self) { 
+function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
@@ -120,6 +120,7 @@ function onlyUnique(value, index, self) {
 function select(category_name, main_category){
     main_category = unescape(main_category);
     subcategory_name = unescape(category_name);
+    alert('2222')
     var collumn=-1;
      try {
     $.ajax({
@@ -270,21 +271,21 @@ function select(category_name, main_category){
 
 } catch (e) {
 
-   logMyErrors(e); 
-}    
-    
-    
+   logMyErrors(e);
+}
+
+
 }
 
 function ajax(category_name, state, subcat, main_category){
-  
+
     main_category = unescape(main_category);
-  
+
      subcat =  unescape(subcat);
     category_name = unescape(category_name);
    // var c=1;
     var collumn=-1;
-    
+
     try {
     $.ajax({
         url: 'http://10.70.1.148:8080/Serverfiles/feetch_products.php',
@@ -298,53 +299,53 @@ function ajax(category_name, state, subcat, main_category){
         state: state
         },
         success: function(data, status){
-            
+
              var count = data.length;
-              
-              
+
+
              $(".tabs_sub").html('');
-              
-            $.each(data, function(i,item){ 
-                
+
+            $.each(data, function(i,item){
+
               if(item.Segment=="Automotive"){
                    var kategorie =  replaceAll(item.Category," ","_");
-                   
+
                       if(kategorie=="Passenger_Comfort_And_Access")
                    {
                        kategorie="Passenger_Comfort";
                    }
-                   
+
                        if(kategorie=="Servers")
                    {
                        kategorie="Server";
                    }
-                   
+
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
-              
+
                if(item.Segment=="Medical & Life Sciences"){
-                   
+
                    var kategorie =  replaceAll(item.Category," ","_");
-                   
-                     
+
+
                       if(kategorie=="Drug_Delivery_and_Diagnostics")
                    {
                        kategorie="Drug";
                    }
-                   
+
                      if(kategorie=="Surgical_and_Treatment")
                    {
                        kategorie="Surgical";
                    }
-                   
+
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=medical.html>"+item.Segment+"</a> / <a href=M_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
-              
+
                if(item.Segment=="Datacom & Telecom"){
                    var kategorie =  replaceAll(item.Category," ","_");
-                   
+
                       if(kategorie=="Servers")
                    {
                        kategorie="Server";
@@ -352,17 +353,17 @@ function ajax(category_name, state, subcat, main_category){
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=datacom.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
-              
+
               if(item.Segment=="Technologies"){
-                   
+
                 var kategorie =  replaceAll(item.Category," ","_");
-                
-                  
+
+
                    if(kategorie=="Fuel Cell Bipolar Plates")
                 {
                     kategorie="Fuel Cell";
                 }
-                
+
                   if(kategorie=="Busbars")
                 {
                     kategorie="Busbars";
@@ -383,23 +384,23 @@ function ajax(category_name, state, subcat, main_category){
                 {
                     kategorie="Cold Forged";
                 }
-                
+
                  var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
         //    $(".breadcrumb").html("<a href=startScreen.html>HOME</a>");
            }
 
                 collumn++;
-               
+
                 /* if(c==total){
-                       
+
                         c=1;
-                        
+
                   }  */
-                
-                
-                
+
+
+
                 var columnSide = '';
-                    
+
                 switch(collumn) {
                     case 0:
                         columnSide = 'left';
@@ -410,44 +411,44 @@ function ajax(category_name, state, subcat, main_category){
                     case 2:
                         columnSide = 'right';
                         break;
-                } 
-                
+                }
+
                 $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
-                
+
                 if ((i + 1) % 3 == 0) {
                    collumn = -1;
                }
-                
+
                 /*if (collumn==0){
-                    
-                    
-                    
-                    
-                  
-                   
-                } 
-                
-                
+
+
+
+
+
+
+                }
+
+
                  if (collumn==1){
-                     
-                     
-                      
+
+
+
                     $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
-                    
-                    
-                } 
-                
-                
+
+
+                }
+
+
                  if (collumn==2){
                     $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
-                    
-                   
+
+
                 } */
-                  
-             //  c++;  
-              
-             
-              
+
+             //  c++;
+
+
+
             });
         },
         error: function(data){
@@ -459,17 +460,17 @@ function ajax(category_name, state, subcat, main_category){
 }
 catch (e) {
 
-   logMyErrors(e); 
+   logMyErrors(e);
 }
-    
+
 }
 
 function Products_Entertainment_system_js() {
 
-    
 
-    
-    
+
+
+
     /*
      * Nonvisual components
      */
@@ -497,14 +498,14 @@ function Products_Entertainment_system_js() {
             var _page = this;
             adjustContentHeightWithPadding(_page);
         });
-        
+
         $('#Products_Entertainment_system').on({
             pageshow: function(event) {
                 try {
                    select(getAllUrlParams().category, getAllUrlParams().main_category);
                   // ajax(getAllUrlParams().category, 'category', '', getAllUrlParams().main_category);
-                    
-                   
+
+
                 } catch (e) {
                     console.error(e);
                     hideSpinner();
@@ -539,16 +540,16 @@ function Products_Entertainment_system_js() {
 };
 $(document).off("pagecreate", "#Products_Entertainment_system").on("pagecreate", "#Products_Entertainment_system", function(event, ui) {
     Apperyio.processSelectMenu($(this));
-    
-    
-   
-    
-    
+
+
+
+
+
  //   $(document).on("change","#form_list", function(){
-                  
+
  //       ajax($("#form_list").val(), 'product', getAllUrlParams().category,getAllUrlParams().main_category);
 // });
-    
+
     $(".counter").html(pocet);
     Products_Entertainment_system_js();
 });
