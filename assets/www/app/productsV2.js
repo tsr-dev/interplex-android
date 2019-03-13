@@ -124,12 +124,11 @@ function ajax() {
 
 
     var product_name = getAllUrlParams().product;
-    var main_category = getAllUrlParams().main_category;
-
-
+    var main_category = getAllUrlParams().Segment;
     try {
+
         $.ajax({
-            url: 'http://10.70.1.148:8080/Serverfiles/feetch.php',
+            url: 'http://47.102.96.129/interplex-backend/feetch.php',
             type: "GET",
             dataType: 'jsonp',
             jsonp: 'callback',
@@ -143,31 +142,56 @@ function ajax() {
 
                     $(".name").append(item.Name);
 
+                    if(item.Segment=="Press-Fit"){
+                         var kategorie =  replaceAll(item.Category," ","_");
+
+                          var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+                         $(".breadcrumb").html("<a href=startScreen.html>HOME</a>" );
+
+                     }
+
+                     if(item.Segment=="IPD-Demos"){
+                      var kategorie =  replaceAll(item.Category," ","_");
+
+                       var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+                        $(".breadcrumb").html("<a href=startScreen.html>HOME</a>" );
+
+                       }
+
+                    if(item.Segment=="Technologies"){
+                       var kategorie =  replaceAll(item.Category," ","_");
+
+                       var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+                      $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a>" );
+
+//                      $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a> / <a href='Products_Entertainment_systemV2.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+                     }
+
 
                     $(".enquiry_form").append("<a href=# class=enquiry data-id=" + item.Mark + ">ADD TO ENQUIRY</a>");
 
-                    $(".image").append("<img id='first_image1' width='100%' data-src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + ".jpg src=http://10.70.1.148:8080/Serverfiles/thumbs/" + item.Mark + ".jpg />");
+                    $(".image").append("<img id='first_image1' width='100%' data-src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + ".jpg src=http://47.102.96.129/interplex-backend/thumbs/" + item.Mark + ".jpg />");
 
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_1.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_1.jpg />"); }, function () { });
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_1.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_1.jpg />"); }, function () { });
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_2.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_2.jpg />"); }, function () { });
-
-
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_2.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_2.jpg />"); }, function () { });
 
 
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_3.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_3.jpg />"); }, function () { });
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_4.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_4.jpg />"); }, function () { });
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_5.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_5.jpg />"); }, function () { });
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_3.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_3.jpg />"); }, function () { });
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_6.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_6.jpg />"); }, function () { });
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_4.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_4.jpg />"); }, function () { });
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_7.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_7.jpg />"); }, function () { });
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_5.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_5.jpg />"); }, function () { });
 
-                    checkImage(("http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_8.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://10.70.1.148:8080/Serverfiles/" + item.Mark + "/" + item.Mark + "_8.jpg />"); }, function () { });
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_6.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_6.jpg />"); }, function () { });
+
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_7.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_7.jpg />"); }, function () { });
+
+                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_8.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_8.jpg />"); }, function () { });
 
                     $(".description").append(item.Description);
                 });

@@ -123,7 +123,7 @@ function select(category_name, main_category){
     var collumn=-1;
      try {
     $.ajax({
-        url: 'http://10.70.1.148:8080/Serverfiles/select.php',
+        url: 'http://47.102.96.129/interplex-backend/select.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -158,6 +158,15 @@ function select(category_name, main_category){
                             var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
                       $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
                       }
+
+
+                      if(item.Segment=="Technologies"){
+                                                       var kategorie =  replaceAll(item.Category," ","_");
+
+
+                                                        var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+                                                  $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+                                                  }
 
                        if(item.Segment=="Medical & Life Sciences"){
 
@@ -214,7 +223,7 @@ function select(category_name, main_category){
                         }
                         var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
                         var kategorie =  replaceAll(item.Category," ","_");
-                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+kategorie+"&subcategory="+subkategorie+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+kategorie+"&subcategory="+subkategorie+"'><img width='100%' src=http://47.102.96.129/interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -234,14 +243,14 @@ function select(category_name, main_category){
 
 
 
-                            $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                            $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
 
                         }
 
 
                          if (collumn==2){
-                            $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                            $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
 
                         } */
@@ -278,7 +287,7 @@ function ajax(subcategory_name, main_category, name){
     
     try {
     $.ajax({
-        url: 'http://10.70.1.148:8080/Serverfiles/feetch_products_page.php',
+        url: 'http://47.102.96.129/interplex-backend/feetch_products_page.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -312,6 +321,14 @@ function ajax(subcategory_name, main_category, name){
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
+
+              if(item.Segment=="Technologies"){
+                                 var kategorie =  replaceAll(item.Category," ","_");
+
+
+                                  var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
+                            $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
+                            }
               
                if(item.Segment=="Medical & Life Sciences"){
                    
@@ -367,7 +384,7 @@ function ajax(subcategory_name, main_category, name){
                         break;
                 } 
                 
-                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"&main_category="+item.Category+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"&main_category="+item.Category+"><img width='100%' src=http://47.102.96.129/interplex-backend/thumbs/"+item.Mark+".jpg /></a><a href=products.html?product="+item.Mark+"&main_category="+item.Category+"&Segment="+item.Segment+"><div class='name_cat'>"+item.Name+"</div></div></a>");
                 
                 if ((i + 1) % 3 == 0) {
                    collumn = -1;
@@ -387,14 +404,14 @@ function ajax(subcategory_name, main_category, name){
                      
                      
                       
-                    $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                     
                 } 
                 
                 
                  if (collumn==2){
-                    $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                    
                 } */

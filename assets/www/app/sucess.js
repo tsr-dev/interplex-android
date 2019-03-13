@@ -113,7 +113,7 @@ function ajax(){
   
     try {
     $.ajax({
-        url: 'http://10.70.1.148:8080/Serverfiles/order.php',
+        url: 'http://47.102.96.129/interplex-backend/order.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
