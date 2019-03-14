@@ -129,7 +129,7 @@ function ajax(){
   
     
     try {
-//    alert(product_name);
+//    alert(main_category);
     $.ajax({
         url: 'http://web-dev.us/Interplex-backend/feetch.php',
         type: "GET",
@@ -148,13 +148,9 @@ function ajax(){
               if(item.Segment=="Automotive"){
                    var kategorie =  replaceAll(item.Category," ","_");
                    
-                   if(kategorie=="Passenger_Comfort_&_Access")
-                   {
-                       kategorie="Passenger_Comfort";
-                   }
-                   
+
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-              $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&Segment="+item.Segment+"'>"+item.Subcategory+"</a>" );
+              $(".breadcrumb").append("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?segment="+item.Segment+"&category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
 
 

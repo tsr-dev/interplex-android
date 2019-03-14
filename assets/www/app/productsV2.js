@@ -164,9 +164,8 @@ function ajax() {
                        var kategorie =  replaceAll(item.Category," ","_");
 
                        var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-                      $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a>" );
+                      $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a> / <a href='Products_Entertainment_systemV2.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
 
-//                      $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Technologies.html>"+item.Segment+"</a> / <a href='Products_Entertainment_systemV2.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
                      }
 
 

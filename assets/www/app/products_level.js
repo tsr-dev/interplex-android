@@ -308,16 +308,7 @@ function ajax(subcategory_name, main_category, name){
               if(item.Segment=="Automotive"){
                    var kategorie =  replaceAll(item.Category," ","_");
                    
-                      if(kategorie=="Passenger_Comfort_And_Access")
-                   {
-                       kategorie="Passenger_Comfort";
-                   }
-                   
-                       if(kategorie=="Servers")
-                   {
-                       kategorie="Server";
-                   }
-                   
+
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
@@ -384,7 +375,7 @@ function ajax(subcategory_name, main_category, name){
                         break;
                 } 
                 
-                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"&main_category="+item.Category+"&Segment="+item.Segment+"><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?Segment="+item.Segment+"&product="+item.Mark+"&main_category="+item.Category+"><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                 
                 if ((i + 1) % 3 == 0) {
                    collumn = -1;

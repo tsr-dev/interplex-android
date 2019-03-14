@@ -258,7 +258,6 @@ label.ui-btn.ui-corner-all.ui-btn-inherit.ui-btn-icon-left.ui-radio-off {
     position: relative;
     top: -32px;
     background-color: black;
-        height: 37px;
     padding-bottom: 5px;
     padding-top: 5px;
 }
@@ -386,11 +385,11 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 .category_name_product{
     width: 100%;
+    height: auto;
     padding: 10px;
     margin-bottom: 10px;
     font-size: 14px;
     color: white;
-    height: 150px;
     text-align: center;
     padding-top: 20px;
     

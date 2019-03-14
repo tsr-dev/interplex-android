@@ -213,7 +213,7 @@ function select(category_name, main_category){
                                 break;
                         }
 
-                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+item.Category+"&subcategory="+item.Subcategory+"'><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+item.Category+"&subcategory="+item.Subcategory+"'><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat' >"+item.Name+"</div></div>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -302,38 +302,38 @@ function ajax(category_name, state, subcat, main_category){
                    {
                        kategorie="Passenger_Comfort";
                    }
-                   
+
                        if(kategorie=="Servers")
                    {
                        kategorie="Server";
                    }
-                   
+
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=automotive.html>"+item.Segment+"</a> / <a href=A_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
               
                if(item.Segment=="Medical & Life Sciences"){
-                   
+
                    var kategorie =  replaceAll(item.Category," ","_");
-                   
-                     
+
+
                       if(kategorie=="Drug_Delivery_and_Diagnostics")
                    {
                        kategorie="Drug";
                    }
-                   
+
                      if(kategorie=="Surgical_and_Treatment")
                    {
                        kategorie="Surgical";
                    }
-                   
+
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=medical.html>"+item.Segment+"</a> / <a href=M_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
-              
+
                if(item.Segment=="Datacom & Telecom"){
                    var kategorie =  replaceAll(item.Category," ","_");
-                   
+
                       if(kategorie=="Servers")
                    {
                        kategorie="Server";
@@ -341,7 +341,7 @@ function ajax(category_name, state, subcat, main_category){
                     var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
               $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=datacom.html>"+item.Segment+"</a> / <a href=D_"+kategorie+".html>"+item.Category+"</a> / <a href='Products_Entertainment_system.html?category="+item.Subcategory+"&main_category="+item.Category+"'>"+item.Subcategory+"</a>" );
               }
-              
+
                 collumn++;
                
                 /* if(c==total){
