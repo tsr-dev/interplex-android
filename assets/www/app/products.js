@@ -129,6 +129,7 @@ function ajax(){
   
     
     try {
+//    alert(product_name);
     $.ajax({
         url: 'http://web-dev.us/Interplex-backend/feetch.php',
         type: "GET",

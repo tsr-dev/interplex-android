@@ -132,16 +132,17 @@ function ajax(){
         success: function(data, status){
             console.log(JSON.stringify(data));
             $.each(data, function(i,item){
-              
+
+
                
               $(".produkty").append('<div class="name_product" id='+item.Mark+'>'+item.Name+'</div><a class="delete" data-id="'+item.Mark+'">X</div>');
                $(".produkty").append('<input hidden name=zbozi type=text id="'+item.Mark+'" value="'+item.Mark+'">');
             
               $(".produkty").append(" <div class='image_product' data-id='"+item.Mark+"'><img width='100%' src=http://web-dev.us/Interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /> </div>" );
               $(".produkty").append('<div class="subcategory_product" id='+item.Mark+'>'+item.Subcategory+'</div>');
-              
+              if(item.Subcategory != item.Category){
               $(".produkty").append('<div class="category_product" id='+item.Mark+'>'+item.Category+'</div>');
-             
+             }
           
             });
         },
