@@ -124,7 +124,7 @@ function ajax(){
     
     try {
     $.ajax({
-        url: 'http://47.102.96.129/interplex-backend/feetch_more.php',
+        url: 'http://web-dev.us/Interplex-backend/feetch_more.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -137,7 +137,7 @@ function ajax(){
               $(".produkty").append('<div class="name_product" id='+item.Mark+'>'+item.Name+'</div><a class="delete" data-id="'+item.Mark+'">X</div>');
                $(".produkty").append('<input hidden name=zbozi type=text id="'+item.Mark+'" value="'+item.Mark+'">');
             
-              $(".produkty").append(" <div class='image_product' data-id='"+item.Mark+"'><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /> </div>" );
+              $(".produkty").append(" <div class='image_product' data-id='"+item.Mark+"'><img width='100%' src=http://web-dev.us/Interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /> </div>" );
               $(".produkty").append('<div class="subcategory_product" id='+item.Mark+'>'+item.Subcategory+'</div>');
               
               $(".produkty").append('<div class="category_product" id='+item.Mark+'>'+item.Category+'</div>');
@@ -161,7 +161,7 @@ catch (e) {
 
    try {
     $.ajax({
-        url: 'http://47.102.96.129/interplex-backend/stuff.php',
+        url: 'http://web-dev.us/Interplex-backend/stuff.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -261,7 +261,7 @@ $(document).off("pagecreate", "#cart").on("pagecreate", "#cart", function(event,
     var form_data = new FormData();                  
     form_data.append('file', file_data);                            
     $.ajax({
-                url: 'http://47.102.96.129/interplex-backend/uploader.php',
+                url: 'http://web-dev.us/Interplex-backend/uploader.php',
                 dataType: 'text',
                 cache: false,
                 contentType: false,

@@ -123,7 +123,7 @@ function select(category_name, main_category){
     var collumn=-1;
      try {
     $.ajax({
-        url: 'http://47.102.96.129/interplex-backend/select.php',
+        url: 'http://web-dev.us/Interplex-backend/select.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -223,7 +223,7 @@ function select(category_name, main_category){
                         }
                         var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
                         var kategorie =  replaceAll(item.Category," ","_");
-                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+kategorie+"&subcategory="+subkategorie+"'><img width='100%' src=http://47.102.96.129/interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+kategorie+"&subcategory="+subkategorie+"$segment="+item.Segment+"'><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -243,14 +243,14 @@ function select(category_name, main_category){
 
 
 
-                            $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                            $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://web-dev.us/Interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
 
                         }
 
 
                          if (collumn==2){
-                            $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                            $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://web-dev.us/Interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
 
                         } */
@@ -287,7 +287,7 @@ function ajax(subcategory_name, main_category, name){
     
     try {
     $.ajax({
-        url: 'http://47.102.96.129/interplex-backend/feetch_products_page.php',
+        url: 'http://web-dev.us/Interplex-backend/feetch_products_page.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -384,7 +384,7 @@ function ajax(subcategory_name, main_category, name){
                         break;
                 } 
                 
-                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"&main_category="+item.Category+"><img width='100%' src=http://47.102.96.129/interplex-backend/thumbs/"+item.Mark+".jpg /></a><a href=products.html?product="+item.Mark+"&main_category="+item.Category+"&Segment="+item.Segment+"><div class='name_cat'>"+item.Name+"</div></div></a>");
+                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"&main_category="+item.Category+"&Segment="+item.Segment+"><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                 
                 if ((i + 1) % 3 == 0) {
                    collumn = -1;
@@ -404,14 +404,14 @@ function ajax(subcategory_name, main_category, name){
                      
                      
                       
-                    $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_center").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://web-dev.us/Interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                     
                 } 
                 
                 
                  if (collumn==2){
-                    $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://47.102.96.129/interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                    $(".tabs_sub_right").html("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://web-dev.us/Interplex-backend/"+item.Mark+"/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                     
                    
                 } */

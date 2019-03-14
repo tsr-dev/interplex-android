@@ -125,10 +125,11 @@ function ajax() {
 
     var product_name = getAllUrlParams().product;
     var main_category = getAllUrlParams().Segment;
-    try {
 
+    try {
+//        alert(product_name);
         $.ajax({
-            url: 'http://47.102.96.129/interplex-backend/feetch.php',
+            url: 'http://web-dev.us/Interplex-backend/feetch.php',
             type: "GET",
             dataType: 'jsonp',
             jsonp: 'callback',
@@ -138,6 +139,7 @@ function ajax() {
                 main_category: main_category
             },
             success: function (data, status) {
+
                 $.each(data, function (i, item) {
 
                     $(".name").append(item.Name);
@@ -146,7 +148,7 @@ function ajax() {
                          var kategorie =  replaceAll(item.Category," ","_");
 
                           var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-                         $(".breadcrumb").html("<a href=startScreen.html>HOME</a>" );
+                         $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Products_Entertainment_systemV2.html?category=Press-Fit&main_category=Press-Fit>"+item.Segment+"</a>" );
 
                      }
 
@@ -154,7 +156,7 @@ function ajax() {
                       var kategorie =  replaceAll(item.Category," ","_");
 
                        var subkategorie =  replaceAll(item.Subcategory,"%20"," ");
-                        $(".breadcrumb").html("<a href=startScreen.html>HOME</a>" );
+                        $(".breadcrumb").html("<a href=startScreen.html>HOME</a> / <a href=Products_Entertainment_systemV2.html?category=IPD-Demos&main_category=IPD-Demos>"+item.Segment+"</a>" );
 
                        }
 
@@ -170,28 +172,28 @@ function ajax() {
 
                     $(".enquiry_form").append("<a href=# class=enquiry data-id=" + item.Mark + ">ADD TO ENQUIRY</a>");
 
-                    $(".image").append("<img id='first_image1' width='100%' data-src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + ".jpg src=http://47.102.96.129/interplex-backend/thumbs/" + item.Mark + ".jpg />");
+                    $(".image").append("<img id='first_image1' width='100%' data-src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + ".jpg src=http://web-dev.us/Interplex-backend/thumbs/" + item.Mark + ".jpg />");
 
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_1.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_1.jpg />"); }, function () { });
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_1.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_1.jpg />"); }, function () { });
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_2.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_2.jpg />"); }, function () { });
-
-
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_2.jpg"), function () { $(".gallery").append("<img id='first_image' width='45%;float:left;margin-right:10px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_2.jpg />"); }, function () { });
 
 
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_3.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_3.jpg />"); }, function () { });
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_4.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_4.jpg />"); }, function () { });
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_5.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_5.jpg />"); }, function () { });
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_3.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_3.jpg />"); }, function () { });
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_6.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_6.jpg />"); }, function () { });
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_4.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_4.jpg />"); }, function () { });
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_7.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_7.jpg />"); }, function () { });
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_5.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_5.jpg />"); }, function () { });
 
-                    checkImage(("http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_8.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://47.102.96.129/interplex-backend/" + item.Mark + "/" + item.Mark + "_8.jpg />"); }, function () { });
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_6.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_6.jpg />"); }, function () { });
+
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_7.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_7.jpg />"); }, function () { });
+
+                    checkImage(("http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_8.jpg"), function () { $(".thumb").append("<img id='first_image' width='15%;float:left;margin-left:15px;' src=http://web-dev.us/Interplex-backend/" + item.Mark + "/" + item.Mark + "_8.jpg />"); }, function () { });
 
                     $(".description").append(item.Description);
                 });

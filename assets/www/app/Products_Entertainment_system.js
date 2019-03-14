@@ -123,7 +123,7 @@ function select(category_name, main_category){
     var collumn=-1;
      try {
     $.ajax({
-        url: 'http://47.102.96.129/interplex-backend/select.php',
+        url: 'http://web-dev.us/Interplex-backend/select.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -213,7 +213,7 @@ function select(category_name, main_category){
                                 break;
                         }
 
-                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+item.Category+"&subcategory="+item.Subcategory+"'><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                        $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href='products_level.html?name="+item.Name+"&main_category="+item.Category+"&subcategory="+item.Subcategory+"'><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
 
                         if ((i + 1) % 3 == 0) {
                            collumn = -1;
@@ -276,7 +276,7 @@ function ajax(category_name, state, subcat, main_category){
     
     try {
     $.ajax({
-        url: 'http://47.102.96.129/interplex-backend/feetch_products.php',
+        url: 'http://web-dev.us/Interplex-backend/feetch_products.php',
         type: "GET",
         dataType: 'jsonp',
         jsonp: 'callback',
@@ -366,7 +366,7 @@ function ajax(category_name, state, subcat, main_category){
                         break;
                 } 
                 
-                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://10.70.1.148:8080/Serverfiles/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
+                $(".tabs_sub_" + columnSide).append("<div class='category_name_product'><a href=products.html?product="+item.Mark+"><img width='100%' src=http://web-dev.us/Interplex-backend/thumbs/"+item.Mark+".jpg /></a><div class='name_cat'>"+item.Name+"</div></div>");
                 
                 if ((i + 1) % 3 == 0) {
                    collumn = -1;
