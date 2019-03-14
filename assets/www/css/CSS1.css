@@ -385,7 +385,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 .category_name_product{
     width: 100%;
-    height: auto;
+    height: 100px;
     padding: 10px;
     margin-bottom: 10px;
     font-size: 14px;
