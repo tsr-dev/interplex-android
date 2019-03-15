@@ -258,6 +258,7 @@ label.ui-btn.ui-corner-all.ui-btn-inherit.ui-btn-icon-left.ui-radio-off {
     position: relative;
     top: -32px;
     background-color: black;
+        height: 37px;
     padding-bottom: 5px;
     padding-top: 5px;
 }
@@ -270,7 +271,7 @@ label.ui-btn.ui-corner-all.ui-btn-inherit.ui-btn-icon-left.ui-radio-off {
     margin: auto;
 }
 
-.success{background-color:green;width: 94%;;color:white;display:none;    
+.success{background-color:green;width: 94%;;color:white;display:none;
     margin-left: 12px;
     padding-left: 10px;}
 
@@ -304,7 +305,7 @@ label.ui-btn.ui-corner-all.ui-btn-inherit.ui-btn-icon-left.ui-radio-off {
 .ui-body-f, .ui-page-theme-f .ui-body-inherit, html .ui-bar-f .ui-body-inherit, html .ui-body-f .ui-body-inherit, html body .ui-group-theme-f .ui-body-inherit, html .ui-panel-page-container-f
 {
     text-shadow: 0px !important;
-   
+
 }
 
 .search {
@@ -344,34 +345,19 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 /*SUB CATEGORY */
 
-.tabs_sub_left{
-    width: 26%;
+.tabs_sub_left{    width: 26%;
     float: left;
-    margin-right: 31px;
-    margin-bottom: 20px;
-    }
-.tabs_sub_center{
-    width: 26%;
+    margin-right: 31px;}
+.tabs_sub_center{    width: 26%;
     float: left;
-    margin-left: 13px;
-    margin-bottom: 20px;
-}
-.tabs_sub_right{
-    width: 26%;
-    margin-left: 43px;
+    margin-left: 13px;}
+.tabs_sub_right{    width: 26%;
+        margin-left: 43px;
     float: left;
-    margin-bottom: 20px;
-
     }
-.tabs_sub_category{
-    width:100%;
-    margin-left: 11px;
-    margin-top: -5px;
-        margin-bottom: 20px;
-
-    }
-.category_name{
-    background-color: #0e183c;
+.tabs_sub_category{width:100%;margin-left: 11px;
+    margin-top: -5px;}
+.category_name{      background-color: #0e183c;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -381,11 +367,11 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     text-align: center;
     padding-top: 54px;
     padding-bottom: 50px;
-    
+
 }
 
 .category_name a{text-underline:none;
-    
+
 }
 
 .right_text {
@@ -400,11 +386,11 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 .category_name_product{
     width: 100%;
-    height: 100px;
     padding: 10px;
     margin-bottom: 10px;
     font-size: 14px;
     color: white;
+    height: 150px;
     text-align: center;
     padding-top: 20px;
     
