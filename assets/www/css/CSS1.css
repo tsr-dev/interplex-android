@@ -344,19 +344,34 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 /*SUB CATEGORY */
 
-.tabs_sub_left{    width: 26%;
+.tabs_sub_left{
+    width: 26%;
     float: left;
-    margin-right: 31px;}
-.tabs_sub_center{    width: 26%;
-    float: left;
-    margin-left: 13px;}
-.tabs_sub_right{    width: 26%;
-        margin-left: 43px;
-    float: left;
+    margin-right: 31px;
+    margin-bottom: 20px;
     }
-.tabs_sub_category{width:100%;margin-left: 11px;
-    margin-top: -5px;}
-.category_name{      background-color: #0e183c;
+.tabs_sub_center{
+    width: 26%;
+    float: left;
+    margin-left: 13px;
+    margin-bottom: 20px;
+}
+.tabs_sub_right{
+    width: 26%;
+    margin-left: 43px;
+    float: left;
+    margin-bottom: 20px;
+
+    }
+.tabs_sub_category{
+    width:100%;
+    margin-left: 11px;
+    margin-top: -5px;
+        margin-bottom: 20px;
+
+    }
+.category_name{
+    background-color: #0e183c;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
